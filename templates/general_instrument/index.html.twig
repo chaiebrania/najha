@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GeneralInstrument index{% endblock %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col">
+                        <h1 class="m-0 text-dark">Tableau de bord</h1>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <section class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    <div class="col">
+                        {% include 'common/_message.html.twig' %}
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Liste des instruments</h3>
+                                <a href="{{ path('general_instrument_new') }}" class="btn btn-sm btn-primary float-right">
+                                    <i class="fa fa-plus-circle"></i> Ajouter un instrument général 
+                                </a>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="dataTable" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Code</th>
+                                        <th>Designation</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for general_instrument in general_instruments %}
+                                    <tr>
+                                        <td>{{ general_instrument.id }}</td>
+                                        <td>{{ general_instrument.code }}</td>
+                                        <td>{{ general_instrument.designation }}</td>
+                                        <td>
+                                            <ul class="list-inline d-inline-flex">
+                                                <li class="p-1">
+                                                    <a href="{{ path('general_instrument_show', {'id': general_instrument.id}) }}"
+                                                        class="btn btn-sm btn-default">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="p-1">
+                                                    <a href="{{ path('general_instrument_edit', {'id': general_instrument.id}) }}"
+                                                        class="btn btn-sm btn-success">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="p-1">
+                                                    {% include 'general_instrument/_delete_form.html.twig' %}
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="4">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+</div>
+
+{% endblock %}

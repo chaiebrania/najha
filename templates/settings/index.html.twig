@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}
+    TechFood: Changement de mot de passe
+{% endblock %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col">
+                        <h1 class="m-0 text-dark">Paramètres</h1>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    <div class="col">
+                        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Infos & Mot de passe</h3>
+                            </div>
+                            <div class="card-body">
+                                {% include 'common/_message.html.twig' %}
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        {{ form_row(form.firstName) }}
+                                    </div>
+                                    <div class="col-lg-4">
+                                        {{ form_row(form.lastName) }}
+                                    </div>
+                                    <div class="col-lg-4">
+                                        {{ form_row(form.email) }}
+                                    </div>
+                                    <div class="col-lg-4">
+                                        {{ form_row(form.password) }}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="form-group text-right">
+                                    <button class="btn btn-success" type="submit">
+                                        Mettre à jour
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        {{ form_rest(form) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

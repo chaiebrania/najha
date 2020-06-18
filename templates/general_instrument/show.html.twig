@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GeneralInstrument{% endblock %}
+
+{% block body %}
+    <h1>GeneralInstrument</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ general_instrument.id }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ general_instrument.code }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ general_instrument.designation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('general_instrument_index') }}">back to list</a>
+
+    <a href="{{ path('general_instrument_edit', {'id': general_instrument.id}) }}">edit</a>
+
+    {{ include('general_instrument/_delete_form.html.twig') }}
+{% endblock %}

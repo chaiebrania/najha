@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SpecificInstrument{% endblock %}
+
+{% block body %}
+    <h1>SpecificInstrument</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ specific_instrument.id }}</td>
+            </tr>
+            <tr>
+                <th>MinEtendu</th>
+                <td>{{ specific_instrument.minEtendu }}</td>
+            </tr>
+            <tr>
+                <th>MaxEtendu</th>
+                <td>{{ specific_instrument.maxEtendu }}</td>
+            </tr>
+           
+            <tr>
+                <th>Unit</th>
+                <td>{{ specific_instrument.unit }}</td>
+            </tr>
+            <tr>
+                <th>Precisionn</th>
+                <td>{{ specific_instrument.precisionn }}</td>
+            </tr>
+            <tr>
+                <th>FrequenceCalibrage</th>
+                <td>{{ specific_instrument.frequenceCalibrage }}</td>
+            </tr>
+            <tr>
+                <th>Resolution</th>
+                <td>{{ specific_instrument.resolution }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ specific_instrument.type }}</td>
+            </tr>
+            <tr>
+                <th>DateMiseEnService</th>
+                <td>{{ specific_instrument.dateMiseEnService ? specific_instrument.dateMiseEnService|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>SerialNumber</th>
+                <td>{{ specific_instrument.serialNumber }}</td>
+            </tr>
+            <tr>
+                <th>FrequenceEtallonage</th>
+                <td>{{ specific_instrument.frequenceEtallonage }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('specific_instrument_index') }}">back to list</a>
+
+    <a href="{{ path('specific_instrument_edit', {'id': specific_instrument.id}) }}">edit</a>
+
+    {{ include('specific_instrument/_delete_form.html.twig') }}
+{% endblock %}

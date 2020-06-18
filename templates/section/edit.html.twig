@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Section{% endblock %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col">
+                        <h1 class="m-0 text-dark">Nouveau compte client</h1>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Mise à jour compte client</h3>
+                                <a href="{{ path('section_index') }}" class="float-right"> <i class="fa fa-arrow-left"></i> Retour à la liste</a>
+                            </div>
+
+    {{ include('section/_form.html.twig', {'button_label': 'Update'}) }}
+ </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

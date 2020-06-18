@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PosteTravail{% endblock %}
+
+{% block body %}
+    <h1>PosteTravail</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ poste_travail.id }}</td>
+            </tr>
+            <tr>
+                <th>poste de travail</th>
+                <td>{{ poste_travail.nom }}</td>
+            </tr>
+             <tr>
+                <th>section</th>
+                <td>{{ poste_travail.getSection().nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('poste_travail_index') }}">back to list</a>
+
+    <a href="{{ path('poste_travail_edit', {'id': poste_travail.id}) }}">edit</a>
+
+    {{ include('poste_travail/_delete_form.html.twig') }}
+{% endblock %}

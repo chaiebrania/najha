@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}
+    TechFood: Renouvellement de mot de passe
+{% endblock %}
+
+{% block body %}
+    <div class="login-box">
+        <div class="login-logo">
+
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-header text-center">
+                <img style="height: 120px" class="img-fluid mt-3 mb-3" src="{{ asset('build/images/logo.71e9f55b.jpg') }}"/>
+            </div>
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Renouvellement de mot de passe</p>
+
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+
+                <div class="form-group">
+                    <button class="btn btn-block btn-warning" type="submit">
+                        Enregister le nouveau mot de passe
+                    </button>
+                </div>
+                {{ form_end(form) }}
+
+            </div>
+            <div class="card-footer d-flex flex-row flex-wrap align-items-center justify-content-between">
+                <a href="{{ path('app_login') }}">Retour à la page de connexion</a>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+
+    </div>
+
+{% endblock %}

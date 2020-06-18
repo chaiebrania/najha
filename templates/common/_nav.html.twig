@@ -1,0 +1,102 @@
+{% set path = app.request.schemeAndHttpHost ~ app.request.pathInfo %}
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{{ path('staff_dashboard') }}" class="brand-link">
+        {#<img src="{{ asset('build/images/logo.71e9f55b.jpg') }}" alt="TechFood Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">#}
+        <span class="brand-text font-weight-light">VEGE Engine</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+             
+                 <li class="nav-item">
+                    <a href="{{ path('section_index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Section
+                        </p>
+                    </a>
+                </li>
+                   <li class="nav-item">
+                    <a href="{{ path('poste_travail_index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Poste de travail
+                        </p>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ path('marque_index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Marque
+                        </p>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ path('general_instrument_index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Instrument Général
+                        </p>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ path('specific_instrument_index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Instrument Spécifique
+                        </p>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="{{ path('staff_dashboard') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Fiche de vie
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ path('staff_dashboard') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Norme
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ path('staff_dashboard') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Vérification
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ path('staff_dashboard') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Calendrier
+                        </p>
+                    </a>
+                </li>
+               
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

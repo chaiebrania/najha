@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block body %}
+<div class="login-box">
+    <div class="login-logo">
+
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-header text-center">
+            <h3>
+                Connexion
+            </h3>
+            <p>
+                Connectez-vous à votre espace personnel
+            </p>
+        </div>
+        <div class="card-body login-card-body">
+        
+            {% include 'common/_message.html.twig' %}
+
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                <div class="input-group mb-3">
+                    <input type="email" value="{{ last_username }}" name="email" class="form-control" placeholder="Adresse email">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                        
+                        <a href="{{ path('forgot_password') }}" class="btn btn-secondary">
+                            oublié <i class="fa fa-question"></i>
+                        </a>
+                         
+                    </div>
+                </div>
+                <p class="mb-2">
+                    
+                </p>
+
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+
+                <div class="input-group mb-3">
+                    <div class="icheck-primary">
+                        <input type="checkbox" name="_remember_me" id="remember">
+                        <label for="remember">
+                            Se souvenir de moi
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <a href="{{ path('app_register') }}">Vous n'avez pas un compte ?</a>
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+
+{% endblock %}

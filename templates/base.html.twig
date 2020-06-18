@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}VEGE moteur: Espace administrateur{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    </head>
+    <body
+        {% if is_granted('ROLE_USER') %}
+            class="hold-transition sidebar-mini layout-fixed"
+        {% else %}
+            class="hold-transition login-page"
+        {% endif %}
+    >
+        {% block body %}
+            <div class="wrapper">
+                {% include "common/_header.html.twig" %}
+                {% include "common/_nav.html.twig" %}
+                {% block content %} {% endblock %}
+                {% include "common/_footer.html.twig" %}
+            </div>
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau marque{% endblock %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col">
+                        <h1 class="m-0 text-dark">Nouveau marque</h1>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Créer une marque</h3>
+                                <a href="{{ path('marque_index') }}" class="float-right"> <i class="fa fa-arrow-left"></i> Retour à la liste</a>
+                            </div>
+
+                            {{ include('marque/_form.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
